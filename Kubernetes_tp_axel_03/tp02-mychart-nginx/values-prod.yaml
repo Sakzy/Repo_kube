@@ -1,0 +1,22 @@
+# Default values for tp02-mychart-nginx.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: nginx
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "1.22"
+  
+ingress:
+  enabled: true
+  hosts:
+    - host: srv-prod.test
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+
+    
+ 
